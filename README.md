@@ -36,7 +36,7 @@ See `app.yaml` for reference.
 #
 ## Getting Started
 
-Using Babushka is pretty straightforward and essentially comes in to two parts:
+Using Babushka is pretty straightforward and essentially comes in two parts:
 
 1. `Babuska.Extension` to add to your Jinja2 Templating Environment
 2. `Babushka.Model` to subclass for your NDB Model Classes
@@ -90,7 +90,7 @@ You can also add a `timeout` parameter, in seconds, to set a hard expiration tim
 being cached.
 
 This isn't recommended but offered as a convenience for those using static keys and do not
-want to rely of the cache key invalidation mechanism provided by our `Babushka.Model`.
+want to rely on the cache key invalidation mechanism provided by our `Babushka.Model`.
 
 `{% cache "statickey", timeout=3600 %} ... {% endcache %}`
 
@@ -186,7 +186,7 @@ with so that cache key invalidation can occur
 #
 ## Template Cache Key Invalidation
 
-Invaliding cache keys based on Model operations is great but what about when you update the
+Invalidating cache keys based on Model operations is great but what about when you update the
 actual template itself?
 
 Normally you would have to flush your cache to force your template changes to take effect, or
@@ -224,8 +224,8 @@ whilst breaking this cache once any of our nested posts have been updated, creat
 {% endcache %}
 ```
 
-Using this pattern we save having to query for our post entities every time this template is rendered and only
-have to pass our blog entity to the template for rendering.
+Using this pattern we save having to query for our Post entities every time this template is rendered and only
+have to pass our Blog entity to the template for rendering.
 
 ```python
 class ExampleHandler(BaseHandler):
