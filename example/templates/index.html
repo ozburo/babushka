@@ -1,0 +1,16 @@
+
+<h1>My Blog</h1>
+
+{% cache blog.cache_key %}
+
+<h3>Here are my blog's latest posts:</h3>
+
+{% for post in blog.latest_posts %}
+<ul>
+    {% cache post.cache_key %}
+    <li>{{post.title}}</li>
+    {% endcache %}
+</ul>
+{% endfor %}
+
+{% endcache %}
